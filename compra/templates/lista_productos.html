@@ -1,0 +1,17 @@
+{% extends "base/base.html" %} {% block content %}
+<h1 class="text-center my-5">Listado de Productos</h1>
+
+<div class="row w-100 mx-auto gap-4 mb-5">
+	{% if productos %} {% for producto in productos %}
+	<div class="col p-3 producto">
+		<h2>{{producto.nombre}} - ${{producto.precio}}</h2>
+		<h4 class="fw-bold">Proveedor: {{producto.proveedor}}</h4>
+		<p
+			class="fw-bold {%if producto.stock_actual < 10 %} text-danger {% elif producto.stock_actual <= 30 %} warning {%else%} text-success {% endif %}"
+		>
+			Stock actual: {{producto.stock_actual}}
+		</p>
+	</div>
+	{% endfor %} {% endif %}
+</div>
+{% endblock %}

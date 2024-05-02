@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}{% load static %} {% block content %}
+<h1 class="text-center my-5">Agregar Proveedor</h1>
+
+<div class="container">
+	<form method="POST">
+		<div class="container p-4 w-50 text-center agregarproveedor">
+			{% for field in form %}
+			<div class="fs-5">{{field.errors}} {{ field.label_tag }} {{ field }}</div>
+			<br />
+			{% endfor %} {% csrf_token %}
+			<input
+				class="btn btn-success container w-25"
+				type="submit"
+				value="Guardar"
+			/>
+		</div>
+	</form>
+</div>
+{% if messages %}
+<div class="container text-center mt-5 alert alert-success">
+    {% for message in messages %}
+    <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</span>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

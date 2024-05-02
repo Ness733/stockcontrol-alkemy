@@ -1,0 +1,47 @@
+.header {
+	background-color: #bec0bf;
+}
+
+.warning {
+	color: rgb(255, 145, 0);
+}
+
+.proveedor {
+	border-left: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	border-left-color: royalblue;
+	border-left-style: solid;
+}
+
+.producto {
+	border-left: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	border-left-color: green;
+	border-left-style: solid;
+}
+
+.agregarcard {
+	border: 2px solid green;
+	background-color: green;
+	color: white;
+	border-radius: 0.5rem;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.agregarproveedor {
+	border: 2px solid royalblue;
+	background-color: royalblue;
+	color: white;
+	border-radius: 0.5rem;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.imagesize {
+	max-width: 70vh;
+}
+
+.textshadow {
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

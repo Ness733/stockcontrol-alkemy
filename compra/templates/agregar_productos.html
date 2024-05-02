@@ -1,0 +1,28 @@
+{% extends "base/base.html" %}{% load static %} {% block content %}
+<h1 class="text-center my-5">Agregar Producto</h1>
+
+
+	<form method="POST">
+		<div class="agregarcard container p-4 w-50 text-center">
+			{% for field in form %}
+			<div class="fs-5">{{field.errors}} {{ field.label_tag }} {{ field }}</div>
+			<br />
+			{% endfor %} {% csrf_token %}
+			<input
+				class="btn btn-primary container w-25"
+				type="submit"
+				value="Guardar"
+			/>
+		
+	</form>
+</div>
+
+{% if messages %}
+<div class="container text-center mt-5 alert alert-success">
+    {% for message in messages %}
+    <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</span>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

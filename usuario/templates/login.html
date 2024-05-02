@@ -1,0 +1,15 @@
+{% extends "base/base.html" %} {% block content %}
+
+<div class="container mt-5 w-50 text-center">
+	<h1 class="mb-4">Inicie sesión para comenzar</h1>
+	<form action="{% url 'login' %}" method="post">
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="Username" />
+		<input type="password" name="password" placeholder="Password" />
+
+		<input class="btn btn-primary mt-4" type="submit" value="Login" />
+	</form>
+</div>
+{% if msj %}
+<div class="container mt-5 w-50 alert alert-danger">{{ msj }}</div>
+{% endif %} {% endblock %}

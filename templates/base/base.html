@@ -32,7 +32,9 @@
 				alt=""
 			/>
 		</header>
-		<nav class="nav bg-light">
+
+		<nav class="nav position-relative bg-light">
+			{% if user.is_authenticated %}
 			<a class="nav-link" href="{% url 'lista_productos' %}"
 				>Lista de Productos</a
 			>
@@ -45,7 +47,12 @@
 			<a class="nav-link" href="{% url 'agregar-proveedor' %}"
 				>Nuevo Proveedor</a
 			>
-			<p>{% if user.is_authenticated %} {{user}} {%endif%}</p>
+			{% if user.is_authenticated %}
+			<div class="position-absolute nav-link end-0">
+				<span class="fw-bold px-2 fs-5">Usuario: {{user}}</span>
+				<a class="px-4" href="{% url 'logout' %}">Salir</a>
+			</div>
+			{%endif%} {%endif%}
 		</nav>
 		<section class="container">{% block content %} {% endblock %}</section>
 

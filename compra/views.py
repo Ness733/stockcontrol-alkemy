@@ -3,21 +3,25 @@ from django.urls import reverse
 from compra.models import Proveedor, Producto
 from .forms import ProveedorForm, ProductoForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
 
+@login_required
 def lista_productos(request):
     productos = Producto.objects.all()
     return render(request, "lista_productos.html", {"productos": productos})
 
 
+@login_required
 def lista_proveedores(request):
     proveedores = Proveedor.objects.all()
     return render(request, "lista_proveedores.html", {"proveedores": proveedores})
 
 
+@login_required
 def agregar_proveedor(request):
     nuevo_proveedor = None
     if request.method == "POST":
@@ -32,6 +36,7 @@ def agregar_proveedor(request):
     return render(request, "agregar_proveedores.html", {"form": form})
 
 
+@login_required
 def agregar_producto(request):
     nuevo_producto = None
     if request.method == "POST":

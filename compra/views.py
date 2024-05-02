@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from compra.models import Proveedor, Producto
+from .models import Proveedor, Producto
 from .forms import ProveedorForm, ProductoForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required

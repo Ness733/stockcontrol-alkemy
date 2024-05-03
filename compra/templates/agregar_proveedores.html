@@ -1,21 +1,25 @@
 {% extends "base/base.html" %}{% load static %} {% block content %}
 <h1 class="text-center my-5">Agregar Proveedor</h1>
 
-<div class="container">
+<div class="container w-50">
 	<form method="POST">
-		<div class="container p-4 w-50 text-center agregarproveedor">
+		<div class="p-4 text-center agregarproveedor">
 			{% for field in form %}
 			<div class="fs-5">{{field.errors}} {{ field.label_tag }} {{ field }}</div>
 			<br />
 			{% endfor %} {% csrf_token %}
 			<input
-				class="btn btn-success container w-25"
+				class="btn btn-success w-50"
 				type="submit"
 				value="Guardar"
 			/>
 		</div>
 	</form>
+	<div class="mt-3"><a class="link mt-3" href="{% url 'lista_proveedores' %}">Lista de Proveedores</a></div>
 </div>
+
+
+
 {% if messages %}
 <div class="container text-center mt-5 alert alert-success">
     {% for message in messages %}

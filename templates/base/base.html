@@ -47,10 +47,12 @@
 			>
 			<p>{% if user.is_authenticated %} {{user}} {%endif%}</p>
 		</nav>
-		<section class="container">{% block content %} {% endblock %}</section>
+		<section class="sectionsize w-75 mx-auto">
+			{% block content %} {% endblock %}
+		</section>
 
 		<footer
-			class="position-fixed w-100 bottom-0 text-center bg-dark text-white py-2"
+			class="position-sticky w-100 bottom-0 text-center bg-dark text-white mt-5 py-2"
 		>
 			Trabajo Integrador Alkemy - Nestor Rosales - 2024
 		</footer>

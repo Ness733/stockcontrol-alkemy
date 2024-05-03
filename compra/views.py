@@ -27,7 +27,7 @@ def agregar_proveedor(request):
             messages.success(
                 request, f"Se agrego el proveedor {nuevo_proveedor} con exito"
             )
-            return redirect("agregar-proveedor")
+            return redirect("lista_proveedores")
     form = ProveedorForm()
     return render(request, "agregar_proveedores.html", {"form": form})
 
@@ -41,6 +41,6 @@ def agregar_producto(request):
             messages.success(
                 request, f"Se agrego el producto {nuevo_producto} con exito"
             )
-            return redirect("agregar-producto")
+            return redirect("lista_productos")
     form = ProductoForm()
     return render(request, "agregar_productos.html", {"form": form})

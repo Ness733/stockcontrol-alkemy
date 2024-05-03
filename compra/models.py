@@ -8,7 +8,7 @@ class Proveedor(models.Model):
     dni = models.IntegerField()
 
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre} {self.apellido}"
 
 
 class Producto(models.Model):
